@@ -14,14 +14,14 @@ package ranges;
 public interface FloatRange {
 
 	/**
-	 * @param val the sub range index to retrieve the lower bound of
+	 * @param index the sub range index to retrieve the lower bound of
 	 * @return the least Float, inclusive, of a specific sub range in this FloatRange
 	 */
 	public float getLowerBound(int index);
 
 
 	/**
-	 * @param val the sub range index to retrieve the upper bound of
+	 * @param index the sub range index to retrieve the upper bound of
 	 * @return the greatest Float, inclusive, of a specific sub range in this FloatRange
 	 */
 	public float getUpperBound(int index);

@@ -43,11 +43,14 @@ public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMu
 
 	public FloatRangeSearcherMutableImpl(primitiveCollections.FloatList rangePoints, boolean locked,
 			boolean throwErrorIfEqualRangeExists, boolean combineOverlappingRanges) {
-		this(locked, throwErrorIfEqualRangeExists, combineOverlappingRanges);
+		this.rangePoints = new primitiveCollections.FloatArrayList();
+		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
+		this.combineOverlap = combineOverlappingRanges;
 
 		for(int i = 0, size = rangePoints.size(); i < size; i += 2) {
 			addRange(rangePoints.get(i), rangePoints.get(i + 1));
 		}
+		this.locked = locked;
 	}
 
 
@@ -58,7 +61,9 @@ public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMu
 
 	public FloatRangeSearcherMutableImpl(FloatRangeSearcher src, boolean locked,
 			boolean throwErrorIfEqualRangeExists, boolean combineOverlappingRanges) {
-		this(locked, throwErrorIfEqualRangeExists, combineOverlappingRanges);
+		this.rangePoints = new primitiveCollections.FloatArrayList();
+		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
+		this.combineOverlap = combineOverlappingRanges;
 
 		for(int i = 0, size = src.size(); i < size; i++) {
 			float start = src.getLowerBound(i);
@@ -68,6 +73,7 @@ public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMu
 			}
 			addRange(start, end);
 		}
+		this.locked = locked;
 	}
 
 

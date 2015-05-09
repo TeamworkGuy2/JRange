@@ -32,13 +32,14 @@ public final class FloatSearcherMutable implements FloatSearcher {
 
 	public FloatSearcherMutable(FloatSearcherMutable valueSearcher, boolean locked) {
 		this.locked = locked;
-		this.values = valueSearcher.values.copy();
+		this.values = new FloatListSorted();
 
-		for(int i = 0, size = this.values.size(); i < size; i++) {
-			float c = this.values.get(i);
+		for(int i = 0, size = valueSearcher.size(); i < size; i++) {
+			float c = valueSearcher.values.get(i);
 			if(this.values.contains(c)) {
 				throw new IllegalArgumentException("duplicate searcher float '" + c + "'");
 			}
+			this.values.add(c);
 		}
 	}
 

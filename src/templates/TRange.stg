@@ -15,14 +15,14 @@ package $var.packageName$;
 public interface $var.className$ {
 
 	/**
-	 * @param val the sub range index to retrieve the lower bound of
+	 * @param index the sub range index to retrieve the lower bound of
 	 * @return the least $var.objectType$, inclusive, of a specific sub range in this $var.className$
 	 */
 	public $var.type$ getLowerBound(int index);
 
 
 	/**
-	 * @param val the sub range index to retrieve the upper bound of
+	 * @param index the sub range index to retrieve the upper bound of
 	 * @return the greatest $var.objectType$, inclusive, of a specific sub range in this $var.className$
 	 */
 	public $var.type$ getUpperBound(int index);

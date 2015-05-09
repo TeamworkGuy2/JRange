@@ -44,11 +44,14 @@ public final class $var.className$ implements $var.implementClassNames:{x | $x$}
 
 	public $var.className$($var.primitiveListInterface$ rangePoints, boolean locked,
 			boolean throwErrorIfEqualRangeExists, boolean combineOverlappingRanges) {
-		this(locked, throwErrorIfEqualRangeExists, combineOverlappingRanges);
+		this.rangePoints = new $var.primitiveListImpl$();
+		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
+		this.combineOverlap = combineOverlappingRanges;
 
 		for(int i = 0, size = rangePoints.size(); i < size; i += 2) {
 			addRange(rangePoints.get(i), rangePoints.get(i + 1));
 		}
+		this.locked = locked;
 	}
 
 
@@ -59,7 +62,9 @@ public final class $var.className$ implements $var.implementClassNames:{x | $x$}
 
 	public $var.className$($var.immutableClassName$ src, boolean locked,
 			boolean throwErrorIfEqualRangeExists, boolean combineOverlappingRanges) {
-		this(locked, throwErrorIfEqualRangeExists, combineOverlappingRanges);
+		this.rangePoints = new $var.primitiveListImpl$();
+		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
+		this.combineOverlap = combineOverlappingRanges;
 
 		for(int i = 0, size = src.size(); i < size; i++) {
 			$var.type$ start = src.getLowerBound(i);
@@ -69,6 +74,7 @@ public final class $var.className$ implements $var.implementClassNames:{x | $x$}
 			}
 			addRange(start, end);
 		}
+		this.locked = locked;
 	}
 
 

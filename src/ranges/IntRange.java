@@ -14,14 +14,14 @@ package ranges;
 public interface IntRange {
 
 	/**
-	 * @param val the sub range index to retrieve the lower bound of
+	 * @param index the sub range index to retrieve the lower bound of
 	 * @return the least Integer, inclusive, of a specific sub range in this IntRange
 	 */
 	public int getLowerBound(int index);
 
 
 	/**
-	 * @param val the sub range index to retrieve the upper bound of
+	 * @param index the sub range index to retrieve the upper bound of
 	 * @return the greatest Integer, inclusive, of a specific sub range in this IntRange
 	 */
 	public int getUpperBound(int index);

@@ -14,14 +14,14 @@ package ranges;
 public interface CharRange {
 
 	/**
-	 * @param val the sub range index to retrieve the lower bound of
+	 * @param index the sub range index to retrieve the lower bound of
 	 * @return the least Character, inclusive, of a specific sub range in this CharRange
 	 */
 	public char getLowerBound(int index);
 
 
 	/**
-	 * @param val the sub range index to retrieve the upper bound of
+	 * @param index the sub range index to retrieve the upper bound of
 	 * @return the greatest Character, inclusive, of a specific sub range in this CharRange
 	 */
 	public char getUpperBound(int index);

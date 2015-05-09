@@ -33,13 +33,14 @@ public final class $var.className$ implements $var.implementClassNames:{x | $x$}
 
 	public $var.className$($var.className$ valueSearcher, boolean locked) {
 		this.locked = locked;
-		this.values = valueSearcher.values.copy();
+		this.values = new $var.valuesCollectionClassName$();
 
-		for(int i = 0, size = this.values.size(); i < size; i++) {
-			$var.type$ c = this.values.get(i);
+		for(int i = 0, size = valueSearcher.size(); i < size; i++) {
+			$var.type$ c = valueSearcher.values.get(i);
 			if(this.values.contains(c)) {
 				throw new IllegalArgumentException("duplicate searcher $var.type$ '" + c + "'");
 			}
+			this.values.add(c);
 		}
 	}
 

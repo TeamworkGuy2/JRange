@@ -43,11 +43,14 @@ public final class IntRangeSearcherMutableImpl implements IntRangeSearcherMutabl
 
 	public IntRangeSearcherMutableImpl(primitiveCollections.IntList rangePoints, boolean locked,
 			boolean throwErrorIfEqualRangeExists, boolean combineOverlappingRanges) {
-		this(locked, throwErrorIfEqualRangeExists, combineOverlappingRanges);
+		this.rangePoints = new primitiveCollections.IntArrayList();
+		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
+		this.combineOverlap = combineOverlappingRanges;
 
 		for(int i = 0, size = rangePoints.size(); i < size; i += 2) {
 			addRange(rangePoints.get(i), rangePoints.get(i + 1));
 		}
+		this.locked = locked;
 	}
 
 
@@ -58,7 +61,9 @@ public final class IntRangeSearcherMutableImpl implements IntRangeSearcherMutabl
 
 	public IntRangeSearcherMutableImpl(IntRangeSearcher src, boolean locked,
 			boolean throwErrorIfEqualRangeExists, boolean combineOverlappingRanges) {
-		this(locked, throwErrorIfEqualRangeExists, combineOverlappingRanges);
+		this.rangePoints = new primitiveCollections.IntArrayList();
+		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
+		this.combineOverlap = combineOverlappingRanges;
 
 		for(int i = 0, size = src.size(); i < size; i++) {
 			int start = src.getLowerBound(i);
@@ -68,6 +73,7 @@ public final class IntRangeSearcherMutableImpl implements IntRangeSearcherMutabl
 			}
 			addRange(start, end);
 		}
+		this.locked = locked;
 	}
 
 
