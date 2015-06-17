@@ -8,7 +8,7 @@ import org.stringtemplate.v4.ST;
 import templates.RangeInfo;
 import templates.SearchSetInfo;
 import codeTemplate.PrimitiveTemplates;
-import codeTemplate.TemplateUtil;
+import codeTemplate.TemplateRender;
 
 /**
  * @author TeamworkGuy2
@@ -123,57 +123,57 @@ public class GenerateRanges {
 
 
 	public static final void generateRanges(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateUtil.createTemplate("src/templates/TRange.stg", "TRange");
+		ST tmpl = TemplateRender.createTemplate("src/templates/TRange.stg", "TRange");
 		for(RangeInfo info : infos) {
-			TemplateUtil.renderTemplate(tmpl, info);
+			TemplateRender.renderClassTemplate(tmpl, info);
 		}
 	}
 
 
 	public static final void generateSearchers(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateUtil.createTemplate("src/templates/TSearcher.stg", "TSearcher");
+		ST tmpl = TemplateRender.createTemplate("src/templates/TSearcher.stg", "TSearcher");
 		for(RangeInfo info : infos) {
-			TemplateUtil.renderTemplate(tmpl, info);
+			TemplateRender.renderClassTemplate(tmpl, info);
 		}
 	}
 
 
 	public static final void generateRangeSearchers(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateUtil.createTemplate("src/templates/TRangeSearcher.stg", "TRangeSearcher");
+		ST tmpl = TemplateRender.createTemplate("src/templates/TRangeSearcher.stg", "TRangeSearcher");
 		for(RangeInfo info : infos) {
-			TemplateUtil.renderTemplate(tmpl, info);
+			TemplateRender.renderClassTemplate(tmpl, info);
 		}
 	}
 
 
 	public static final void generateRangeSearcherMutables(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateUtil.createTemplate("src/templates/TRangeSearcherMutable.stg", "TRangeSearcherMutable");
+		ST tmpl = TemplateRender.createTemplate("src/templates/TRangeSearcherMutable.stg", "TRangeSearcherMutable");
 		for(RangeInfo info : infos) {
-			TemplateUtil.renderTemplate(tmpl, info);
+			TemplateRender.renderClassTemplate(tmpl, info);
 		}
 	}
 
 
 	public static final void generateRangeSearcherMutableImpls(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateUtil.createTemplate("src/templates/TRangeSearcherMutableImpl.stg", "TRangeSearcherMutableImpl");
+		ST tmpl = TemplateRender.createTemplate("src/templates/TRangeSearcherMutableImpl.stg", "TRangeSearcherMutableImpl");
 		for(RangeInfo info : infos) {
-			TemplateUtil.renderTemplate(tmpl, info);
+			TemplateRender.renderClassTemplate(tmpl, info);
 		}
 	}
 
 
 	public static final void generateRangeSearcherSet(SearchSetInfo... infos) throws IOException {
-		ST tmpl = TemplateUtil.createTemplate("src/templates/TSearchSet.stg", "TSearchSet");
+		ST tmpl = TemplateRender.createTemplate("src/templates/TSearchSet.stg", "TSearchSet");
 		for(RangeInfo info : infos) {
-			TemplateUtil.renderTemplate(tmpl, info);
+			TemplateRender.renderClassTemplate(tmpl, info);
 		}
 	}
 
 
 	public static final void generateSearcherMutable(SearchSetInfo... infos) throws IOException {
-		ST tmpl = TemplateUtil.createTemplate("src/templates/TSearcherMutable.stg", "TSearcherMutable");
+		ST tmpl = TemplateRender.createTemplate("src/templates/TSearcherMutable.stg", "TSearcherMutable");
 		for(RangeInfo info : infos) {
-			TemplateUtil.renderTemplate(tmpl, info);
+			TemplateRender.renderClassTemplate(tmpl, info);
 		}
 	}
 

@@ -11,7 +11,7 @@ import primitiveCollections.IntList;
 import ranges.IntRangeSearcherMutable;
 import ranges.IntRangeSearcherMutableImpl;
 import ranges.Ranges;
-import checks.Check;
+import checks.CheckTask;
 import collectionUtils.ListUtil;
 
 /**
@@ -29,7 +29,7 @@ public class RangeTests {
 		Integer[] indices = { 0, 1, 9, 10, 24, 26, 54 };
 		Boolean[] expected = { true, true, true, true, true, false, true };
 
-		Check.assertTests(indices, expected, "", "", (val) -> ranges.isMatch(val));
+		CheckTask.assertTests(indices, expected, "", "", (val) -> ranges.isMatch(val));
 
 		int size = ranges.size();
 		ranges.addRange(25, 30);
@@ -40,7 +40,7 @@ public class RangeTests {
 		indices = new Integer[] { 19, 20, 22, 23, 26, 28, 30, 31 };
 		expected = new Boolean[] { false, true, true, false, false, true, true, false };
 
-		Check.assertTests(indices, expected, "", "", (val) -> ranges.isMatch(val));
+		CheckTask.assertTests(indices, expected, "", "", (val) -> ranges.isMatch(val));
 
 		ranges.removeRange(25, 30);
 		ranges.removeRange(40, 50);
@@ -63,7 +63,7 @@ public class RangeTests {
 		};
 		IntArrayList duplicateRangeList = new IntArrayList(duplicateRanges, 0, duplicateRanges.length);
 		System.out.println("with duplicate ranges:\t\t" + duplicateRangeList);
-		Check.assertException(() -> Ranges.throwIfDuplicateRanges(duplicateRangeList));
+		CheckTask.assertException(() -> Ranges.throwIfDuplicateRanges(duplicateRangeList));
 		System.out.println("removed duplicate ranges:\t" + duplicateRangeList);
 
 		int[][] ranges = new int[][] {
@@ -86,9 +86,9 @@ public class RangeTests {
 					", count: " + Ranges.rangeOverlapCount(ranges[i][0], ranges[i][1], ranges[i][2], ranges[i][3]));
 		}
 
-		Check.assertTests(ranges, expectedOverlap, "", "",
+		CheckTask.assertTests(ranges, expectedOverlap, "", "",
 				(range) -> Ranges.doRangesOverlap(range[0], range[1], range[2], range[3]));
-		Check.assertTests(ranges, expectedOverlapCount, "", "",
+		CheckTask.assertTests(ranges, expectedOverlapCount, "", "",
 				(range) -> Ranges.rangeOverlapCount(range[0], range[1], range[2], range[3]));
 	}
 
@@ -104,7 +104,7 @@ public class RangeTests {
 		};
 		Boolean[] expect = new Boolean[] { true, false, true, true };
 
-		Check.assertTests(lists, expect, "", "", (list) -> ListUtil.isUnique(list));
+		CheckTask.assertTests(lists, expect, "", "", (list) -> ListUtil.isUnique(list));
 	}
 
 }
