@@ -29,7 +29,7 @@ public class RangeTests {
 		Integer[] indices = { 0, 1, 9, 10, 24, 26, 54 };
 		Boolean[] expected = { true, true, true, true, true, false, true };
 
-		CheckTask.assertTests(indices, expected, "", "", (val) -> ranges.isMatch(val));
+		CheckTask.assertTests(indices, expected, (val) -> ranges.isMatch(val));
 
 		int size = ranges.size();
 		ranges.addRange(25, 30);
@@ -40,7 +40,7 @@ public class RangeTests {
 		indices = new Integer[] { 19, 20, 22, 23, 26, 28, 30, 31 };
 		expected = new Boolean[] { false, true, true, false, false, true, true, false };
 
-		CheckTask.assertTests(indices, expected, "", "", (val) -> ranges.isMatch(val));
+		CheckTask.assertTests(indices, expected, (val) -> ranges.isMatch(val));
 
 		ranges.removeRange(25, 30);
 		ranges.removeRange(40, 50);
@@ -86,10 +86,8 @@ public class RangeTests {
 					", count: " + Ranges.rangeOverlapCount(ranges[i][0], ranges[i][1], ranges[i][2], ranges[i][3]));
 		}
 
-		CheckTask.assertTests(ranges, expectedOverlap, "", "",
-				(range) -> Ranges.doRangesOverlap(range[0], range[1], range[2], range[3]));
-		CheckTask.assertTests(ranges, expectedOverlapCount, "", "",
-				(range) -> Ranges.rangeOverlapCount(range[0], range[1], range[2], range[3]));
+		CheckTask.assertTests(ranges, expectedOverlap, (range) -> Ranges.doRangesOverlap(range[0], range[1], range[2], range[3]));
+		CheckTask.assertTests(ranges, expectedOverlapCount, (range) -> Ranges.rangeOverlapCount(range[0], range[1], range[2], range[3]));
 	}
 
 
@@ -104,7 +102,7 @@ public class RangeTests {
 		};
 		Boolean[] expect = new Boolean[] { true, false, true, true };
 
-		CheckTask.assertTests(lists, expect, "", "", (list) -> ListUtil.isUnique(list));
+		CheckTask.assertTests(lists, expect, (list) -> ListUtil.isUnique(list));
 	}
 
 }

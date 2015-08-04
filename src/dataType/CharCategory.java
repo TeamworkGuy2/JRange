@@ -16,7 +16,8 @@ public enum CharCategory {
 	WHITESPACE(new CharSearcherMutable((char)32/*space (' ')*/, (char)9/*horizontal tab*/, (char)12/*form feed*/,
 			(char)10/*line feed*/, (char)13/*carriage return*/ /*TODO handle CR LF combinations*/).toImmutable()),
 	LINE_TERMINATOR(new CharSearcherMutable((char)10/*line feed*/,
-			(char)13/*carriage return*/ /*TODO handle CR LF combinations*/).toImmutable());
+			(char)13/*carriage return*/ /*TODO handle CR LF combinations*/).toImmutable()),
+	HEXADECIMAL(new CharRangeSearcherMutableImpl('0', '9', 'A', 'F', 'a', 'f').toImmutable());
 
 	private CharSearcher charSearcher;
 
