@@ -1,6 +1,6 @@
 package ranges;
 
-import primitiveCollections.IntListSorted;
+import twg2.collections.primitiveCollections.IntListSorted;
 
 /** A {@link IntSearcher} that contains a set of ints to compare input int to.
  * @author TeamworkGuy2

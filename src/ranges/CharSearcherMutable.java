@@ -1,6 +1,6 @@
 package ranges;
 
-import primitiveCollections.CharListSorted;
+import twg2.collections.primitiveCollections.CharListSorted;
 
 /** A {@link CharSearcher} that contains a set of chars to compare input char to.
  * @author TeamworkGuy2

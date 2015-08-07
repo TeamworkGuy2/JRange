@@ -103,7 +103,7 @@ public final class $var.className$ implements $var.implementClassNames:{x | $x$}
 
 	private void checkLocked() {
 		if(locked) {
-			throw new IllegalStateException("cannot modify a locked $var.implementsClassNames$");
+			throw new IllegalStateException("cannot modify a locked $var.implementClassNames$");
 		}
 	}
 

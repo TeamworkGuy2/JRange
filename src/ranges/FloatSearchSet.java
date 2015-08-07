@@ -1,6 +1,6 @@
 package ranges;
 
-import primitiveCollections.FloatListSorted;
+import twg2.collections.primitiveCollections.FloatListSorted;
 
 /** A {@link FloatSearcher} that contains a {@link FloatRange}
  * and a {@link CharSearcherMutable}
@@ -102,7 +102,7 @@ public final class FloatSearchSet implements FloatSearcher {
 
 	private void checkLocked() {
 		if(locked) {
-			throw new IllegalStateException("cannot modify a locked ");
+			throw new IllegalStateException("cannot modify a locked FloatSearcher");
 		}
 	}
 

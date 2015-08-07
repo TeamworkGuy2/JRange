@@ -6,7 +6,7 @@ package ranges;
  */
 @javax.annotation.Generated("StringTemplate")
 public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMutable {
-	private primitiveCollections.FloatArrayList rangePoints;
+	private twg2.collections.primitiveCollections.FloatArrayList rangePoints;
 	private final boolean locked;
 	private boolean throwIfRangeExists;
 	private boolean combineOverlap;
@@ -36,14 +36,14 @@ public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMu
 	}
 
 
-	public FloatRangeSearcherMutableImpl(primitiveCollections.FloatList rangePoints) {
+	public FloatRangeSearcherMutableImpl(twg2.collections.primitiveCollections.FloatList rangePoints) {
 		this(rangePoints, false, true, false);
 	}
 
 
-	public FloatRangeSearcherMutableImpl(primitiveCollections.FloatList rangePoints, boolean locked,
+	public FloatRangeSearcherMutableImpl(twg2.collections.primitiveCollections.FloatList rangePoints, boolean locked,
 			boolean throwErrorIfEqualRangeExists, boolean combineOverlappingRanges) {
-		this.rangePoints = new primitiveCollections.FloatArrayList();
+		this.rangePoints = new twg2.collections.primitiveCollections.FloatArrayList();
 		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
 		this.combineOverlap = combineOverlappingRanges;
 
@@ -61,7 +61,7 @@ public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMu
 
 	public FloatRangeSearcherMutableImpl(FloatRangeSearcher src, boolean locked,
 			boolean throwErrorIfEqualRangeExists, boolean combineOverlappingRanges) {
-		this.rangePoints = new primitiveCollections.FloatArrayList();
+		this.rangePoints = new twg2.collections.primitiveCollections.FloatArrayList();
 		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
 		this.combineOverlap = combineOverlappingRanges;
 
@@ -89,7 +89,7 @@ public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMu
 
 	public FloatRangeSearcherMutableImpl(boolean locked, boolean throwErrorIfEqualRangeExists,
 			boolean combineOverlappingRanges) {
-		this.rangePoints = new primitiveCollections.FloatArrayList();
+		this.rangePoints = new twg2.collections.primitiveCollections.FloatArrayList();
 		this.locked = locked;
 		this.throwIfRangeExists = throwErrorIfEqualRangeExists;
 		this.combineOverlap = combineOverlappingRanges;

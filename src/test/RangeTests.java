@@ -6,13 +6,12 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import primitiveCollections.IntArrayList;
-import primitiveCollections.IntList;
 import ranges.IntRangeSearcherMutable;
 import ranges.IntRangeSearcherMutableImpl;
 import ranges.Ranges;
+import twg2.collections.primitiveCollections.IntArrayList;
+import twg2.collections.primitiveCollections.IntList;
 import checks.CheckTask;
-import collectionUtils.ListUtil;
 
 /**
  * @author TeamworkGuy2
@@ -102,7 +101,22 @@ public class RangeTests {
 		};
 		Boolean[] expect = new Boolean[] { true, false, true, true };
 
-		CheckTask.assertTests(lists, expect, (list) -> ListUtil.isUnique(list));
+		CheckTask.assertTests(lists, expect, (list) -> isUniqueCopy(list, 0, list.size()));
 	}
+
+
+	// copy from JCollectionUtility
+	private static final <E> boolean isUniqueCopy(List<E> list, int off, int len) {
+		for(int i = off, size = off + len; i < size; i++) {
+			E itemI = list.get(i);
+			for(int ii = off, size2 = off + len; ii < size2; ii++) {
+				if(i != ii && itemI != null ? itemI.equals(list.get(ii)) : list.get(ii) == null) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
 
 }

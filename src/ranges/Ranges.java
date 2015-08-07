@@ -1,11 +1,11 @@
 package ranges;
 
-import primitiveCollections.CharArrayList;
-import primitiveCollections.CharList;
-import primitiveCollections.FloatArrayList;
-import primitiveCollections.FloatList;
-import primitiveCollections.IntArrayList;
-import primitiveCollections.IntList;
+import twg2.collections.primitiveCollections.CharArrayList;
+import twg2.collections.primitiveCollections.CharList;
+import twg2.collections.primitiveCollections.FloatArrayList;
+import twg2.collections.primitiveCollections.FloatList;
+import twg2.collections.primitiveCollections.IntArrayList;
+import twg2.collections.primitiveCollections.IntList;
 
 /** Methods for checking if integer ranges overlap, contain a value, or adding/merging
  * overlapping ranges.

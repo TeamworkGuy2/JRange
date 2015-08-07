@@ -1,6 +1,6 @@
 package ranges;
 
-import primitiveCollections.CharListSorted;
+import twg2.collections.primitiveCollections.CharListSorted;
 
 /** A {@link CharSearcher} that contains a {@link CharRange}
  * and a {@link CharSearcherMutable}
@@ -102,7 +102,7 @@ public final class CharSearchSet implements CharSearcher {
 
 	private void checkLocked() {
 		if(locked) {
-			throw new IllegalStateException("cannot modify a locked ");
+			throw new IllegalStateException("cannot modify a locked CharSearcher");
 		}
 	}
 

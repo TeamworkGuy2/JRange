@@ -1,6 +1,6 @@
 package ranges;
 
-import primitiveCollections.FloatListSorted;
+import twg2.collections.primitiveCollections.FloatListSorted;
 
 /** A {@link FloatSearcher} that contains a set of floats to compare input float to.
  * @author TeamworkGuy2

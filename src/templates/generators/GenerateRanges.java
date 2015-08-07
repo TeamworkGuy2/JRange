@@ -15,6 +15,7 @@ import codeTemplate.TemplateRender;
  * @since 2014-12-24
  */
 public class GenerateRanges {
+	private static String templateDir = "src/templates/";
 
 
 	public static final void generateRangeClasses() throws IOException {
@@ -66,20 +67,20 @@ public class GenerateRanges {
 
 		// generates XyzRangeSearcherMutableImpl classes
 		charRange.className = "CharRangeSearcherMutableImpl";
-		charRange.primitiveListImpl = "primitiveCollections.CharArrayList";
-		charRange.primitiveListInterface = "primitiveCollections.CharList";
+		charRange.primitiveListImpl = "twg2.collections.primitiveCollections.CharArrayList";
+		charRange.primitiveListInterface = "twg2.collections.primitiveCollections.CharList";
 		charRange.implementClassNames = Arrays.asList("CharRangeSearcherMutable");
 		charRange.immutableClassName = "CharRangeSearcher";
 
 		intRange.className = "IntRangeSearcherMutableImpl";
-		intRange.primitiveListImpl = "primitiveCollections.IntArrayList";
-		intRange.primitiveListInterface = "primitiveCollections.IntList";
+		intRange.primitiveListImpl = "twg2.collections.primitiveCollections.IntArrayList";
+		intRange.primitiveListInterface = "twg2.collections.primitiveCollections.IntList";
 		intRange.implementClassNames = Arrays.asList("IntRangeSearcherMutable");
 		intRange.immutableClassName = "IntRangeSearcher";
 
 		floatRange.className = "FloatRangeSearcherMutableImpl";
-		floatRange.primitiveListImpl = "primitiveCollections.FloatArrayList";
-		floatRange.primitiveListInterface = "primitiveCollections.FloatList";
+		floatRange.primitiveListImpl = "twg2.collections.primitiveCollections.FloatArrayList";
+		floatRange.primitiveListInterface = "twg2.collections.primitiveCollections.FloatList";
 		floatRange.implementClassNames = Arrays.asList("FloatRangeSearcherMutable");
 		floatRange.immutableClassName = "FloatRangeSearcher";
 
@@ -87,19 +88,19 @@ public class GenerateRanges {
 
 		// generates XyzSearchSet classes
 		charRange.className = "CharSearchSet";
-		charRange.importStatements = Arrays.asList("import primitiveCollections.CharListSorted;");
+		charRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.CharListSorted;");
 		charRange.implementClassNames = Arrays.asList("CharSearcher");
 		charRange.valuesCollectionClassName = "CharListSorted";
 		charRange.rangesCollectionClassName = "CharRangeSearcherMutableImpl";
 
 		intRange.className = "IntSearchSet";
-		intRange.importStatements = Arrays.asList("import primitiveCollections.IntListSorted;");
+		intRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.IntListSorted;");
 		intRange.implementClassNames = Arrays.asList("IntSearcher");
 		intRange.valuesCollectionClassName = "IntListSorted";
 		intRange.rangesCollectionClassName = "IntRangeSearcherMutableImpl";
 
 		floatRange.className = "FloatSearchSet";
-		floatRange.importStatements = Arrays.asList("import primitiveCollections.FloatListSorted;");
+		floatRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.FloatListSorted;");
 		floatRange.implementClassNames = Arrays.asList("FloatSearcher");
 		floatRange.valuesCollectionClassName = "FloatListSorted";
 		floatRange.rangesCollectionClassName = "FloatRangeSearcherMutableImpl";
@@ -107,15 +108,15 @@ public class GenerateRanges {
 		generateRangeSearcherSet(infos);
 
 		charRange.className = "CharSearcherMutable";
-		charRange.importStatements = Arrays.asList("import primitiveCollections.CharListSorted;");
+		charRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.CharListSorted;");
 		charRange.implementClassNames = Arrays.asList("CharSearcher");
 
 		intRange.className = "IntSearcherMutable";
-		intRange.importStatements = Arrays.asList("import primitiveCollections.IntListSorted;");
+		intRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.IntListSorted;");
 		intRange.implementClassNames = Arrays.asList("IntSearcher");
 
 		floatRange.className = "FloatSearcherMutable";
-		floatRange.importStatements = Arrays.asList("import primitiveCollections.FloatListSorted;");
+		floatRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.FloatListSorted;");
 		floatRange.implementClassNames = Arrays.asList("FloatSearcher");
 
 		generateSearcherMutable(infos);
@@ -123,7 +124,7 @@ public class GenerateRanges {
 
 
 	public static final void generateRanges(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateRender.createTemplate("src/templates/TRange.stg", "TRange");
+		ST tmpl = TemplateRender.createTemplate(templateDir + "TRange.stg", "TRange");
 		for(RangeInfo info : infos) {
 			TemplateRender.renderClassTemplate(tmpl, info);
 		}
@@ -131,7 +132,7 @@ public class GenerateRanges {
 
 
 	public static final void generateSearchers(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateRender.createTemplate("src/templates/TSearcher.stg", "TSearcher");
+		ST tmpl = TemplateRender.createTemplate(templateDir + "TSearcher.stg", "TSearcher");
 		for(RangeInfo info : infos) {
 			TemplateRender.renderClassTemplate(tmpl, info);
 		}
@@ -139,7 +140,7 @@ public class GenerateRanges {
 
 
 	public static final void generateRangeSearchers(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateRender.createTemplate("src/templates/TRangeSearcher.stg", "TRangeSearcher");
+		ST tmpl = TemplateRender.createTemplate(templateDir + "TRangeSearcher.stg", "TRangeSearcher");
 		for(RangeInfo info : infos) {
 			TemplateRender.renderClassTemplate(tmpl, info);
 		}
@@ -147,7 +148,7 @@ public class GenerateRanges {
 
 
 	public static final void generateRangeSearcherMutables(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateRender.createTemplate("src/templates/TRangeSearcherMutable.stg", "TRangeSearcherMutable");
+		ST tmpl = TemplateRender.createTemplate(templateDir + "TRangeSearcherMutable.stg", "TRangeSearcherMutable");
 		for(RangeInfo info : infos) {
 			TemplateRender.renderClassTemplate(tmpl, info);
 		}
@@ -155,7 +156,7 @@ public class GenerateRanges {
 
 
 	public static final void generateRangeSearcherMutableImpls(RangeInfo... infos) throws IOException {
-		ST tmpl = TemplateRender.createTemplate("src/templates/TRangeSearcherMutableImpl.stg", "TRangeSearcherMutableImpl");
+		ST tmpl = TemplateRender.createTemplate(templateDir + "TRangeSearcherMutableImpl.stg", "TRangeSearcherMutableImpl");
 		for(RangeInfo info : infos) {
 			TemplateRender.renderClassTemplate(tmpl, info);
 		}
@@ -163,7 +164,7 @@ public class GenerateRanges {
 
 
 	public static final void generateRangeSearcherSet(SearchSetInfo... infos) throws IOException {
-		ST tmpl = TemplateRender.createTemplate("src/templates/TSearchSet.stg", "TSearchSet");
+		ST tmpl = TemplateRender.createTemplate(templateDir + "TSearchSet.stg", "TSearchSet");
 		for(RangeInfo info : infos) {
 			TemplateRender.renderClassTemplate(tmpl, info);
 		}
@@ -171,7 +172,7 @@ public class GenerateRanges {
 
 
 	public static final void generateSearcherMutable(SearchSetInfo... infos) throws IOException {
-		ST tmpl = TemplateRender.createTemplate("src/templates/TSearcherMutable.stg", "TSearcherMutable");
+		ST tmpl = TemplateRender.createTemplate(templateDir + "TSearcherMutable.stg", "TSearcherMutable");
 		for(RangeInfo info : infos) {
 			TemplateRender.renderClassTemplate(tmpl, info);
 		}

@@ -1,6 +1,6 @@
 package ranges;
 
-import primitiveCollections.IntListSorted;
+import twg2.collections.primitiveCollections.IntListSorted;
 
 /** A {@link IntSearcher} that contains a {@link IntRange}
  * and a {@link CharSearcherMutable}
@@ -102,7 +102,7 @@ public final class IntSearchSet implements IntSearcher {
 
 	private void checkLocked() {
 		if(locked) {
-			throw new IllegalStateException("cannot modify a locked ");
+			throw new IllegalStateException("cannot modify a locked IntSearcher");
 		}
 	}
 
