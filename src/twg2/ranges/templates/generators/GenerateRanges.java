@@ -7,8 +7,9 @@ import org.stringtemplate.v4.ST;
 
 import twg2.ranges.templates.RangeInfo;
 import twg2.ranges.templates.SearchSetInfo;
-import codeTemplate.primitiveTemplate.PrimitiveTemplates;
-import codeTemplate.render.StringTemplatesUtil;
+import twg2.template.codeTemplate.primitiveTemplate.PrimitiveTemplates;
+import twg2.template.codeTemplate.render.StringTemplatesUtil;
+import twg2.template.codeTemplate.render.TemplateImports;
 
 /**
  * @author TeamworkGuy2
@@ -16,6 +17,7 @@ import codeTemplate.render.StringTemplatesUtil;
  */
 public class GenerateRanges {
 	private static String templateDir = "src/twg2/ranges/templates/";
+	private static TemplateImports importsMapper = TemplateImports.emptyInst();
 
 
 	public static final void generateRangeClasses() throws IOException {
@@ -124,57 +126,57 @@ public class GenerateRanges {
 
 
 	public static final void generateRanges(RangeInfo... infos) throws IOException {
-		ST tmpl = StringTemplatesUtil.createTemplate(templateDir + "TRange.stg", "TRange");
+		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TRange.stg", "TRange", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, info);
+			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
 		}
 	}
 
 
 	public static final void generateSearchers(RangeInfo... infos) throws IOException {
-		ST tmpl = StringTemplatesUtil.createTemplate(templateDir + "TSearcher.stg", "TSearcher");
+		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TSearcher.stg", "TSearcher", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, info);
+			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
 		}
 	}
 
 
 	public static final void generateRangeSearchers(RangeInfo... infos) throws IOException {
-		ST tmpl = StringTemplatesUtil.createTemplate(templateDir + "TRangeSearcher.stg", "TRangeSearcher");
+		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TRangeSearcher.stg", "TRangeSearcher", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, info);
+			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
 		}
 	}
 
 
 	public static final void generateRangeSearcherMutables(RangeInfo... infos) throws IOException {
-		ST tmpl = StringTemplatesUtil.createTemplate(templateDir + "TRangeSearcherMutable.stg", "TRangeSearcherMutable");
+		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TRangeSearcherMutable.stg", "TRangeSearcherMutable", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, info);
+			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
 		}
 	}
 
 
 	public static final void generateRangeSearcherMutableImpls(RangeInfo... infos) throws IOException {
-		ST tmpl = StringTemplatesUtil.createTemplate(templateDir + "TRangeSearcherMutableImpl.stg", "TRangeSearcherMutableImpl");
+		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TRangeSearcherMutableImpl.stg", "TRangeSearcherMutableImpl", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, info);
+			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
 		}
 	}
 
 
 	public static final void generateRangeSearcherSet(SearchSetInfo... infos) throws IOException {
-		ST tmpl = StringTemplatesUtil.createTemplate(templateDir + "TSearchSet.stg", "TSearchSet");
+		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TSearchSet.stg", "TSearchSet", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, info);
+			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
 		}
 	}
 
 
 	public static final void generateSearcherMutable(SearchSetInfo... infos) throws IOException {
-		ST tmpl = StringTemplatesUtil.createTemplate(templateDir + "TSearcherMutable.stg", "TSearcherMutable");
+		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TSearcherMutable.stg", "TSearcherMutable", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, info);
+			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
 		}
 	}
 

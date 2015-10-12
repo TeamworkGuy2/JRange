@@ -1,6 +1,6 @@
 package twg2.ranges.templates;
 
-import codeTemplate.primitiveTemplate.PrimitiveTypeClassTemplate;
+import twg2.template.codeTemplate.primitiveTemplate.PrimitiveTypeClassTemplate;
 
 
 /**
