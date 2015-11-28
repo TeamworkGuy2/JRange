@@ -104,4 +104,17 @@ public final class FloatSearcherMutable implements FloatSearcher {
 		return new FloatSearcherMutable(this, true);
 	}
 
+
+	public FloatListSorted toList() {
+		return values.copy();
+	}
+
+
+	/** WARNING: this is provided for performance optimizations, this returns the underlying sorted values
+	 * that represent this mutable searcher. This method's name, parameters, or return type may change.
+	 */
+	public FloatListSorted getValuesRaw() {
+		return values;
+	}
+
 }

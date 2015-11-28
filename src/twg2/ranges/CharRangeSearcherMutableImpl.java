@@ -189,4 +189,17 @@ public final class CharRangeSearcherMutableImpl implements CharRangeSearcherMuta
 		return new CharRangeSearcherMutableImpl(this, true, true, false);
 	}
 
+
+	public twg2.collections.primitiveCollections.CharArrayList toCharList() {
+		twg2.collections.primitiveCollections.CharArrayList vals = new twg2.collections.primitiveCollections.CharArrayList();
+		for(int i = 0, size = this.size(); i < size; i++) {
+			char low = this.getLowerBound(i);
+			char high = this.getUpperBound(i);
+			for(char ii = low; ii <= high; ii++) {
+				vals.add(ii);
+			}
+		}
+		return vals;
+	}
+
 }

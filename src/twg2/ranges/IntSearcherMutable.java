@@ -104,4 +104,17 @@ public final class IntSearcherMutable implements IntSearcher {
 		return new IntSearcherMutable(this, true);
 	}
 
+
+	public IntListSorted toList() {
+		return values.copy();
+	}
+
+
+	/** WARNING: this is provided for performance optimizations, this returns the underlying sorted values
+	 * that represent this mutable searcher. This method's name, parameters, or return type may change.
+	 */
+	public IntListSorted getValuesRaw() {
+		return values;
+	}
+
 }

@@ -189,4 +189,17 @@ public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMu
 		return new FloatRangeSearcherMutableImpl(this, true, true, false);
 	}
 
+
+	public twg2.collections.primitiveCollections.FloatArrayList toFloatList() {
+		twg2.collections.primitiveCollections.FloatArrayList vals = new twg2.collections.primitiveCollections.FloatArrayList();
+		for(int i = 0, size = this.size(); i < size; i++) {
+			float low = this.getLowerBound(i);
+			float high = this.getUpperBound(i);
+			for(float ii = low; ii <= high; ii++) {
+				vals.add(ii);
+			}
+		}
+		return vals;
+	}
+
 }

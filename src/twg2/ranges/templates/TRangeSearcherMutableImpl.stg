@@ -190,6 +190,19 @@ public final class $var.className$ implements $var.implementClassNames:{x | $x$}
 		return new $var.className$(this, true, true, false);
 	}
 
+
+	public $var.primitiveListImpl$ to$var.typeShortTitleCase$List() {
+		$var.primitiveListImpl$ vals = new $var.primitiveListImpl$();
+		for(int i = 0, size = this.size(); i < size; i++) {
+			$var.type$ low = this.getLowerBound(i);
+			$var.type$ high = this.getUpperBound(i);
+			for($var.type$ ii = low; ii <= high; ii++) {
+				vals.add(ii);
+			}
+		}
+		return vals;
+	}
+
 }
 
 >>

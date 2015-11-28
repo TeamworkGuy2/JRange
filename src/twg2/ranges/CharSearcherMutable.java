@@ -104,4 +104,17 @@ public final class CharSearcherMutable implements CharSearcher {
 		return new CharSearcherMutable(this, true);
 	}
 
+
+	public CharListSorted toList() {
+		return values.copy();
+	}
+
+
+	/** WARNING: this is provided for performance optimizations, this returns the underlying sorted values
+	 * that represent this mutable searcher. This method's name, parameters, or return type may change.
+	 */
+	public CharListSorted getValuesRaw() {
+		return values;
+	}
+
 }

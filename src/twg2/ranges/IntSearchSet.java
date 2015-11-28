@@ -112,4 +112,17 @@ public final class IntSearchSet implements IntSearcher {
 		return this;
 	}
 
+
+	public IntListSorted toIntList() {
+		IntListSorted vals = values.copy();
+		for(int i = 0, size = ranges.size(); i < size; i++) {
+			int low = ranges.getLowerBound(i);
+			int high = ranges.getUpperBound(i);
+			for(int ii = low; ii <= high; ii++) {
+				vals.add(ii);
+			}
+		}
+		return vals;
+	}
+
 }

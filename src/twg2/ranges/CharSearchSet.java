@@ -112,4 +112,17 @@ public final class CharSearchSet implements CharSearcher {
 		return this;
 	}
 
+
+	public CharListSorted toCharList() {
+		CharListSorted vals = values.copy();
+		for(int i = 0, size = ranges.size(); i < size; i++) {
+			char low = ranges.getLowerBound(i);
+			char high = ranges.getUpperBound(i);
+			for(char ii = low; ii <= high; ii++) {
+				vals.add(ii);
+			}
+		}
+		return vals;
+	}
+
 }

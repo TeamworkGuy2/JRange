@@ -128,7 +128,7 @@ public class GenerateRanges {
 	public static final void generateRanges(RangeInfo... infos) throws IOException {
 		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TRange.stg", "TRange", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
+			StringTemplatesUtil.renderClass(tmpl, "var", info);
 		}
 	}
 
@@ -136,7 +136,7 @@ public class GenerateRanges {
 	public static final void generateSearchers(RangeInfo... infos) throws IOException {
 		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TSearcher.stg", "TSearcher", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
+			StringTemplatesUtil.renderClass(tmpl, "var", info);
 		}
 	}
 
@@ -144,7 +144,7 @@ public class GenerateRanges {
 	public static final void generateRangeSearchers(RangeInfo... infos) throws IOException {
 		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TRangeSearcher.stg", "TRangeSearcher", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
+			StringTemplatesUtil.renderClass(tmpl, "var", info);
 		}
 	}
 
@@ -152,7 +152,7 @@ public class GenerateRanges {
 	public static final void generateRangeSearcherMutables(RangeInfo... infos) throws IOException {
 		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TRangeSearcherMutable.stg", "TRangeSearcherMutable", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
+			StringTemplatesUtil.renderClass(tmpl, "var", info);
 		}
 	}
 
@@ -160,7 +160,7 @@ public class GenerateRanges {
 	public static final void generateRangeSearcherMutableImpls(RangeInfo... infos) throws IOException {
 		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TRangeSearcherMutableImpl.stg", "TRangeSearcherMutableImpl", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
+			StringTemplatesUtil.renderClass(tmpl, "var", info);
 		}
 	}
 
@@ -168,7 +168,7 @@ public class GenerateRanges {
 	public static final void generateRangeSearcherSet(SearchSetInfo... infos) throws IOException {
 		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TSearchSet.stg", "TSearchSet", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
+			StringTemplatesUtil.renderClass(tmpl, "var", info);
 		}
 	}
 
@@ -176,7 +176,7 @@ public class GenerateRanges {
 	public static final void generateSearcherMutable(SearchSetInfo... infos) throws IOException {
 		ST tmpl = StringTemplatesUtil.fileTemplate(templateDir + "TSearcherMutable.stg", "TSearcherMutable", importsMapper);
 		for(RangeInfo info : infos) {
-			StringTemplatesUtil.renderClassTemplate(tmpl, "var", info);
+			StringTemplatesUtil.renderClass(tmpl, "var", info);
 		}
 	}
 

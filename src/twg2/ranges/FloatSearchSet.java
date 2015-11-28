@@ -112,4 +112,17 @@ public final class FloatSearchSet implements FloatSearcher {
 		return this;
 	}
 
+
+	public FloatListSorted toFloatList() {
+		FloatListSorted vals = values.copy();
+		for(int i = 0, size = ranges.size(); i < size; i++) {
+			float low = ranges.getLowerBound(i);
+			float high = ranges.getUpperBound(i);
+			for(float ii = low; ii <= high; ii++) {
+				vals.add(ii);
+			}
+		}
+		return vals;
+	}
+
 }

@@ -189,4 +189,17 @@ public final class IntRangeSearcherMutableImpl implements IntRangeSearcherMutabl
 		return new IntRangeSearcherMutableImpl(this, true, true, false);
 	}
 
+
+	public twg2.collections.primitiveCollections.IntArrayList toIntList() {
+		twg2.collections.primitiveCollections.IntArrayList vals = new twg2.collections.primitiveCollections.IntArrayList();
+		for(int i = 0, size = this.size(); i < size; i++) {
+			int low = this.getLowerBound(i);
+			int high = this.getUpperBound(i);
+			for(int ii = low; ii <= high; ii++) {
+				vals.add(ii);
+			}
+		}
+		return vals;
+	}
+
 }
