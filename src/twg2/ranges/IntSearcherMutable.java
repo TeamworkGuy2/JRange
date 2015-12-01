@@ -117,4 +117,10 @@ public final class IntSearcherMutable implements IntSearcher {
 		return values;
 	}
 
+
+	@Override
+	public String toString() {
+		return values.toString();
+	}
+
 }

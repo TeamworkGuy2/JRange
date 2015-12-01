@@ -202,4 +202,25 @@ public final class IntRangeSearcherMutableImpl implements IntRangeSearcherMutabl
 		return vals;
 	}
 
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append('[');
+		int maxR = rangePoints.size() - 2;
+		for(int i = 0; i < maxR; i+=2) {
+			sb.append(rangePoints.get(i));
+			sb.append('-');
+			sb.append(rangePoints.get(i + 1));
+			sb.append(", ");
+		}
+		if(maxR > -2) {
+			sb.append(rangePoints.get(maxR));
+			sb.append('-');
+			sb.append(rangePoints.get(maxR + 1));
+		}
+		sb.append(']');
+		return sb.toString();
+	}
+
 }

@@ -125,4 +125,37 @@ public final class FloatSearchSet implements FloatSearcher {
 		return vals;
 	}
 
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append('[');
+		int maxV = values.size() - 1;
+		for(int i = 0; i < maxV; i++) {
+			sb.append(values.get(i));
+			sb.append(", ");
+		}
+		if(maxV > -1) {
+			sb.append(values.get(maxV));
+		}
+
+		int maxR = ranges.size() - 1;
+		if(maxV > -1 && maxR > -1) {
+			sb.append(", ");
+		}
+		for(int i = 0; i < maxR; i++) {
+			sb.append(ranges.getLowerBound(i));
+			sb.append('-');
+			sb.append(ranges.getUpperBound(i));
+			sb.append(", ");
+		}
+		if(maxR > -1) {
+			sb.append(ranges.getLowerBound(maxR));
+			sb.append('-');
+			sb.append(ranges.getUpperBound(maxR));
+		}
+		sb.append(']');
+		return sb.toString();
+	}
+
 }

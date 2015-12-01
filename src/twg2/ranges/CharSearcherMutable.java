@@ -117,4 +117,10 @@ public final class CharSearcherMutable implements CharSearcher {
 		return values;
 	}
 
+
+	@Override
+	public String toString() {
+		return values.toString();
+	}
+
 }

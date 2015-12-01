@@ -90,19 +90,19 @@ public class GenerateRanges {
 
 		// generates XyzSearchSet classes
 		charRange.className = "CharSearchSet";
-		charRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.CharListSorted;");
+		charRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.CharListSorted");
 		charRange.implementClassNames = Arrays.asList("CharSearcher");
 		charRange.valuesCollectionClassName = "CharListSorted";
 		charRange.rangesCollectionClassName = "CharRangeSearcherMutableImpl";
 
 		intRange.className = "IntSearchSet";
-		intRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.IntListSorted;");
+		intRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.IntListSorted");
 		intRange.implementClassNames = Arrays.asList("IntSearcher");
 		intRange.valuesCollectionClassName = "IntListSorted";
 		intRange.rangesCollectionClassName = "IntRangeSearcherMutableImpl";
 
 		floatRange.className = "FloatSearchSet";
-		floatRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.FloatListSorted;");
+		floatRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.FloatListSorted");
 		floatRange.implementClassNames = Arrays.asList("FloatSearcher");
 		floatRange.valuesCollectionClassName = "FloatListSorted";
 		floatRange.rangesCollectionClassName = "FloatRangeSearcherMutableImpl";
@@ -110,15 +110,15 @@ public class GenerateRanges {
 		generateRangeSearcherSet(infos);
 
 		charRange.className = "CharSearcherMutable";
-		charRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.CharListSorted;");
+		charRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.CharListSorted");
 		charRange.implementClassNames = Arrays.asList("CharSearcher");
 
 		intRange.className = "IntSearcherMutable";
-		intRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.IntListSorted;");
+		intRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.IntListSorted");
 		intRange.implementClassNames = Arrays.asList("IntSearcher");
 
 		floatRange.className = "FloatSearcherMutable";
-		floatRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.FloatListSorted;");
+		floatRange.importStatements = Arrays.asList("import twg2.collections.primitiveCollections.FloatListSorted");
 		floatRange.implementClassNames = Arrays.asList("FloatSearcher");
 
 		generateSearcherMutable(infos);

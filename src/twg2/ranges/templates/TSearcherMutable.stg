@@ -1,7 +1,7 @@
 TSearcherMutable(var) ::= <<
 package $var.packageName$;
 
-$var.importStatements:{x | $x$
+$var.importStatements:{x | $x$;
 }$
 /** A {@link $var.implementClassNames$} that contains a set of $var.type$s to compare input $var.type$ to.
  * @author TeamworkGuy2
@@ -116,6 +116,12 @@ public final class $var.className$ implements $var.implementClassNames:{x | $x$}
 	 */
 	public $var.valuesCollectionClassName$ getValuesRaw() {
 		return values;
+	}
+
+
+	@Override
+	public String toString() {
+		return values.toString();
 	}
 
 }

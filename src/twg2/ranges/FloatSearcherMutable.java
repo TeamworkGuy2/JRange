@@ -117,4 +117,10 @@ public final class FloatSearcherMutable implements FloatSearcher {
 		return values;
 	}
 
+
+	@Override
+	public String toString() {
+		return values.toString();
+	}
+
 }
