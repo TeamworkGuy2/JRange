@@ -99,6 +99,12 @@ public final class $var.className$ implements $var.implementClassNames:{x | $x$}
 	}
 
 
+	public $var.className$ copy() {
+		$var.className$ copy = new $var.className$(this.rangePoints, this.locked, this.throwIfRangeExists, this.combineOverlap);
+		return copy;
+	}
+
+
 	@Override
 	public boolean contains($var.type$ val) {
 		return indexOfMatch(val) > -1;

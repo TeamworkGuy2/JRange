@@ -98,6 +98,12 @@ public final class FloatRangeSearcherMutableImpl implements FloatRangeSearcherMu
 	}
 
 
+	public FloatRangeSearcherMutableImpl copy() {
+		FloatRangeSearcherMutableImpl copy = new FloatRangeSearcherMutableImpl(this.rangePoints, this.locked, this.throwIfRangeExists, this.combineOverlap);
+		return copy;
+	}
+
+
 	@Override
 	public boolean contains(float val) {
 		return indexOfMatch(val) > -1;

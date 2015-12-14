@@ -31,16 +31,27 @@ public final class CharSearcherMutable implements CharSearcher {
 
 
 	public CharSearcherMutable(CharSearcherMutable valueSearcher, boolean locked) {
+		this(valueSearcher.values, locked);
+	}
+
+
+	public CharSearcherMutable(CharListSorted values, boolean locked) {
 		this.locked = locked;
 		this.values = new CharListSorted();
 
-		for(int i = 0, size = valueSearcher.size(); i < size; i++) {
-			char c = valueSearcher.values.get(i);
+		for(int i = 0, size = values.size(); i < size; i++) {
+			char c = values.get(i);
 			if(this.values.contains(c)) {
 				throw new IllegalArgumentException("duplicate searcher char '" + c + "'");
 			}
 			this.values.add(c);
 		}
+	}
+
+
+	public CharSearcherMutable copy() {
+		CharSearcherMutable copy = new CharSearcherMutable(this.values, this.locked);
+		return copy;
 	}
 
 

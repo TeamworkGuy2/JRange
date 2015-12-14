@@ -20,6 +20,20 @@ public final class FloatSearchSet implements FloatSearcher {
 	}
 
 
+	// package-private
+	FloatSearchSet(FloatListSorted values, FloatRangeSearcherMutableImpl ranges, boolean locked) {
+		this.values = values.copy();
+		this.ranges = ranges.copy();
+		this.locked = locked;
+	}
+
+
+	public FloatSearchSet copy() {
+		FloatSearchSet copy = new FloatSearchSet(this.values, this.ranges, this.locked);
+		return copy;
+	}
+
+
 	@Override
 	public boolean contains(float ch) {
 		return values.indexOf(ch) > -1 || ranges.contains(ch);

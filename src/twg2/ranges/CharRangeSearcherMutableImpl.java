@@ -98,6 +98,12 @@ public final class CharRangeSearcherMutableImpl implements CharRangeSearcherMuta
 	}
 
 
+	public CharRangeSearcherMutableImpl copy() {
+		CharRangeSearcherMutableImpl copy = new CharRangeSearcherMutableImpl(this.rangePoints, this.locked, this.throwIfRangeExists, this.combineOverlap);
+		return copy;
+	}
+
+
 	@Override
 	public boolean contains(char val) {
 		return indexOfMatch(val) > -1;

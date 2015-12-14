@@ -31,16 +31,27 @@ public final class IntSearcherMutable implements IntSearcher {
 
 
 	public IntSearcherMutable(IntSearcherMutable valueSearcher, boolean locked) {
+		this(valueSearcher.values, locked);
+	}
+
+
+	public IntSearcherMutable(IntListSorted values, boolean locked) {
 		this.locked = locked;
 		this.values = new IntListSorted();
 
-		for(int i = 0, size = valueSearcher.size(); i < size; i++) {
-			int c = valueSearcher.values.get(i);
+		for(int i = 0, size = values.size(); i < size; i++) {
+			int c = values.get(i);
 			if(this.values.contains(c)) {
 				throw new IllegalArgumentException("duplicate searcher int '" + c + "'");
 			}
 			this.values.add(c);
 		}
+	}
+
+
+	public IntSearcherMutable copy() {
+		IntSearcherMutable copy = new IntSearcherMutable(this.values, this.locked);
+		return copy;
 	}
 
 

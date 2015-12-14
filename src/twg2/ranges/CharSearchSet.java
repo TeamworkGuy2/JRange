@@ -20,6 +20,20 @@ public final class CharSearchSet implements CharSearcher {
 	}
 
 
+	// package-private
+	CharSearchSet(CharListSorted values, CharRangeSearcherMutableImpl ranges, boolean locked) {
+		this.values = values.copy();
+		this.ranges = ranges.copy();
+		this.locked = locked;
+	}
+
+
+	public CharSearchSet copy() {
+		CharSearchSet copy = new CharSearchSet(this.values, this.ranges, this.locked);
+		return copy;
+	}
+
+
 	@Override
 	public boolean contains(char ch) {
 		return values.indexOf(ch) > -1 || ranges.contains(ch);

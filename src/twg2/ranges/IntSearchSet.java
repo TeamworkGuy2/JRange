@@ -20,6 +20,20 @@ public final class IntSearchSet implements IntSearcher {
 	}
 
 
+	// package-private
+	IntSearchSet(IntListSorted values, IntRangeSearcherMutableImpl ranges, boolean locked) {
+		this.values = values.copy();
+		this.ranges = ranges.copy();
+		this.locked = locked;
+	}
+
+
+	public IntSearchSet copy() {
+		IntSearchSet copy = new IntSearchSet(this.values, this.ranges, this.locked);
+		return copy;
+	}
+
+
 	@Override
 	public boolean contains(int ch) {
 		return values.indexOf(ch) > -1 || ranges.contains(ch);

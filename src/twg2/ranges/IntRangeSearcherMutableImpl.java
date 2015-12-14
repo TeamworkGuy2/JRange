@@ -98,6 +98,12 @@ public final class IntRangeSearcherMutableImpl implements IntRangeSearcherMutabl
 	}
 
 
+	public IntRangeSearcherMutableImpl copy() {
+		IntRangeSearcherMutableImpl copy = new IntRangeSearcherMutableImpl(this.rangePoints, this.locked, this.throwIfRangeExists, this.combineOverlap);
+		return copy;
+	}
+
+
 	@Override
 	public boolean contains(int val) {
 		return indexOfMatch(val) > -1;
