@@ -1,5 +1,6 @@
 JRanges
 ==========
+version: 0.1.0
 
 Java classes for storing, searching, and manipulating char, int, and float ranges. 
 

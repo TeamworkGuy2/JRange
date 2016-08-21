@@ -1,0 +1,11 @@
+{
+	"version" : "0.1.0",
+	"name" : "jrange",
+	"description" : "Java classes for storing, searching, and manipulating char, int, and float ranges (a set of values between a min and max)",
+	"homepage" : "https://github.com/TeamworkGuy2/JRange",
+	"license" : "MIT",
+	"main" : "./bin/jrange.jar",
+	"dependencies" : {
+		"jprimitive-collections": "*"
+	}
+}
